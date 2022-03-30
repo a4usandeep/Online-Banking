@@ -1,0 +1,70 @@
+CREATE SCHEMA `db1` ;
+
+CREATE TABLE `db1`.`account` (
+  `id` INT NOT NULL,
+  `accno` BIGINT() NULL,
+  `balance` INT NULL,
+  `username` VARCHAR(255) NULL,
+  `user_id` INT NULL,
+  PRIMARY KEY (`id`));
+
+
+
+CREATE TABLE `db1`.`checkbook_request` (
+  `id` INT NOT NULL,
+  `acc_type` VARCHAR(255) NULL,
+  `account` BIGINT() NULL,
+  `date` DATE NULL,
+  `no_of_pages` INT NULL,
+  `request_status` BIT(1) NULL,
+  PRIMARY KEY (`id`));
+
+
+CREATE TABLE `db1`.`hibernate_sequence` (
+  `next_val` BIGINT() NOT NULL,
+  PRIMARY KEY (`next_val`));
+
+
+CREATE TABLE `db1`.`saccount` (
+  `id` INT NOT NULL,
+  `accno` BIGINT() NULL,
+  `balance` INT NULL,
+  `username` VARCHAR(255) NULL,
+  `user_id` INT NULL,
+  PRIMARY KEY (`id`));
+
+
+CREATE TABLE `db1`.`transfer` (
+  `id` INT NOT NULL,
+  `amount` INT NULL,
+  `date` DATE NULL,
+  `raccount` BIGINT() NULL,
+  `saccount` BIGINT() NULL,
+  PRIMARY KEY (`id`));
+
+
+CREATE TABLE `db1`.`user` (
+  `id` INT NOT NULL,
+  `address` VARCHAR(255) NULL,
+  `authorization_status` TINYINT() NULL,
+  `dob` DATE NULL,
+  `emaill` VARCHAR(255) NULL,
+  `feature_status` INT NULL,
+  `fname` VARCHAR(255) NULL,
+  `identity` VARCHAR(255) NULL,
+  `identity_type` VARCHAR(255) NULL,
+  `lname` VARCHAR(255) NULL,
+  `password` VARCHAR(255) NULL,
+  `phone` BIGINT() NULL,
+  `status` TINYINT() NULL,
+  `username` VARCHAR(255) NULL,
+  PRIMARY KEY (`id`));
+
+
+CREATE TABLE `db1`.`user_history` (
+  `id` INT NOT NULL,
+  `account` BIGINT() NULL,
+  `action` VARCHAR(255) NULL,
+  `amount` INT NULL,
+  `date` DATE NULL,
+  PRIMARY KEY (`id`));
